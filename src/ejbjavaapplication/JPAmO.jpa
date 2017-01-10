@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="2.6.5" sm="false" xs="false" id="_14840537802954" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyClass="BateauentityPK" abs="false" class="Bateauentity" visibile="true" minimized="false" rootElement="_14840537802954" id="_14840537802955">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" visibile="true" name="nom" id="_148405378031111">
+                <jpa:column name="NOM" unique="false" nullable="true" insertable="true" updatable="true" table="BATEAUENTITY" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_14840537802959" connected-attribute-id="_148405378031124" visibile="true" name="bateauentityUtilisateurnewentityCollection" id="_148405378031112"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_148405378031110">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="BATEAUENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="BATEAUENTITY"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="MarqueentityPK" abs="false" class="Marqueentity" visibile="true" minimized="false" rootElement="_14840537802954" id="_14840537802956">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" visibile="true" name="marque" id="_148405378031114">
+                <jpa:column name="MARQUE" unique="false" nullable="true" insertable="true" updatable="true" table="MARQUEENTITY" length="255"/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_148405378031113">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="MARQUEENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="MARQUEENTITY"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="UtilisateurnewentityPK" abs="false" class="Utilisateurnewentity" visibile="true" minimized="false" rootElement="_14840537802954" id="_14840537802957">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" visibile="true" name="nom" id="_148405378031116">
+                <jpa:column name="NOM" unique="false" nullable="true" insertable="true" updatable="true" table="UTILISATEURNEWENTITY" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" visibile="true" name="prenom" id="_148405378031117">
+                <jpa:column name="PRENOM" unique="false" nullable="true" insertable="true" updatable="true" table="UTILISATEURNEWENTITY" length="50"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_14840537802959" connected-attribute-id="_148405378031125" visibile="true" name="bateauentityUtilisateurnewentityCollection" id="_148405378031118"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_148405378031115">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="UTILISATEURNEWENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="UTILISATEURNEWENTITY"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="SequencePK" abs="false" class="Sequence" visibile="true" minimized="false" rootElement="_14840537802954" id="_14840537802958">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="Long" visibile="true" name="seqCount" id="_148405378031120">
+                <jpa:column name="SEQ_COUNT" unique="false" nullable="true" insertable="true" updatable="true" table="SEQUENCE"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" visibile="true" name="seqName" id="_148405378031119">
+                <jpa:column name="SEQ_NAME" unique="false" nullable="false" insertable="true" updatable="true" table="SEQUENCE" length="50"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="SEQUENCE"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="D" compositePrimaryKeyClass="BateauentityUtilisateurnewentityPK" abs="false" class="BateauentityUtilisateurnewentity" visibile="true" minimized="false" rootElement="_14840537802954" id="_14840537802959">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="Integer" visibile="true" name="utilisateurnewentityOrder" id="_148405378031123">
+                <jpa:column name="UTILISATEURNEWENTITY_ORDER" unique="false" nullable="true" insertable="true" updatable="true" table="BATEAUENTITY_UTILISATEURNEWENTITY"/>
+            </jpa:basic>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_14840537802955" connected-attribute-id="_148405378031112" visibile="true" name="bateauentity" id="_148405378031124">
+                <jpa:join-column name="BATEAUENTITY_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_14840537802957" connected-attribute-id="_148405378031118" visibile="true" name="utilisateurnewentity" id="_148405378031125">
+                <jpa:join-column name="UTILISATEURNEWENTITYS_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="long" visibile="true" name="bateauentityId" id="_148405378031121">
+                <jpa:column name="BATEAUENTITY_ID" unique="false" nullable="false" insertable="true" updatable="true" table="BATEAUENTITY_UTILISATEURNEWENTITY"/>
+            </jpa:id>
+            <jpa:id attribute-type="long" visibile="true" name="utilisateurnewentitysId" id="_148405378031122">
+                <jpa:column name="UTILISATEURNEWENTITYS_ID" unique="false" nullable="false" insertable="true" updatable="true" table="BATEAUENTITY_UTILISATEURNEWENTITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="BATEAUENTITY_UTILISATEURNEWENTITY"/>
+    </jpa:entity>
+    <jpa:snp e="true" loc="BEFORE_PACKAGE">/**
+ * This file was generated by the JPA Modeler
+ */</jpa:snp>
+    <jpa:inf e="true" n="java.io.Serializable"/>
+    <jpa:diagram>
+        <plane elementRef="_14840537802954">
+            <shape elementRef="_14840537802955">
+                <Bounds x="650.0" y="57.0" width="285.0" height="126.0"/>
+            </shape>
+            <shape elementRef="_14840537802956">
+                <Bounds x="970.0" y="464.0" width="170.0" height="92.0"/>
+            </shape>
+            <shape elementRef="_14840537802957">
+                <Bounds x="26.0" y="183.0" width="285.0" height="147.0"/>
+            </shape>
+            <shape elementRef="_14840537802958">
+                <Bounds x="1372.0" y="32.0" width="153.0" height="92.0"/>
+            </shape>
+            <shape elementRef="_14840537802959">
+                <Bounds x="388.0" y="464.0" width="280.0" height="168.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
