@@ -22,8 +22,7 @@ import javax.persistence.OrderColumn;
  */
 @Entity
 public class BateauEntity implements Serializable {
-    
-    
+ 
     
     @ElementCollection
     @OrderColumn
@@ -37,8 +36,6 @@ public class BateauEntity implements Serializable {
     public void setNoms(List<String> noms) {
         this.noms = noms;
     }
-    
-    
     
     @OneToMany
     @OrderColumn(name="utilisateurnewentitys_order")//ordonner la liste des utilisateurs avec colone technique
@@ -56,6 +53,8 @@ public class BateauEntity implements Serializable {
     }
 
     private static final long serialVersionUID = 1L;
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
