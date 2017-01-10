@@ -20,9 +20,16 @@ import javax.persistence.OrderColumn;
  *
  * @author lapin
  */
-@Entity
+@Entity(name = "BateauEntity")
 public class BateauEntity implements Serializable {
  
+    public BateauEntity() {
+    }
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    
     
     @ElementCollection
     @OrderColumn
@@ -49,19 +56,12 @@ public class BateauEntity implements Serializable {
         this.utilisateurnewentitys = utilisateurnewentitys;
     }
 
-    public BateauEntity() {
-    }
 
     private static final long serialVersionUID = 1L;
     
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
-    public Long getId() {
-        return id;
-    }
+    
 
     public void setId(Long id) {
         this.id = id;

@@ -19,7 +19,7 @@ import javax.persistence.Id;
 @Entity
 public class MarqueEntity implements Serializable {
     
-    @Column(name = "MARQUE",nullable = false)
+    @Column(name = "MARQUE")
     String Marque;
 
     public String getMarque() {
