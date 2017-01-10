@@ -16,6 +16,7 @@ import javax.persistence.Persistence;
  * @author lapin
  */
 public class MainEJBJPA {
+    
 
         public static void main(String[] args) {    
             
