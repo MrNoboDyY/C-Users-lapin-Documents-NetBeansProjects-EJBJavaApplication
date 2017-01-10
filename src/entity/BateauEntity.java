@@ -8,7 +8,6 @@ package entity;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,48 +19,36 @@ import javax.persistence.OrderColumn;
  *
  * @author lapin
  */
-@Entity(name = "BateauEntity")
+@Entity(name = "bateauentity")
 public class BateauEntity implements Serializable {
- 
-    public BateauEntity() {
-    }
     
+
+    @OneToMany
+    @OrderColumn(name = "utilisateurnewentity_order")        
+    List<UtilisateurNewEntity> utilisateurNewEntitys;
+    
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    
-    @ElementCollection
-    @OrderColumn
-    private List<String> noms;
 
-    public List<String> getNoms() {
-        return noms;
-    }
-
-    @Column(name = "Non",length = 40)
-    public void setNoms(List<String> noms) {
-        this.noms = noms;
+    public Long getId() {
+        return id;
     }
     
-    @OneToMany
-    @OrderColumn(name="utilisateurnewentitys_order")//ordonner la liste des utilisateurs avec colone technique
-    private List<UtilisateurNewEntity> utilisateurnewentitys;
+    @Column(name= "nom")
+    String nom;
 
-    public List<UtilisateurNewEntity> getUtilisateurnewentitys() {
-        return utilisateurnewentitys;
+    public String getNom() {
+        return nom;
     }
 
-    public void setUtilisateurnewentitys(List<UtilisateurNewEntity> utilisateurnewentitys) {
-        this.utilisateurnewentitys = utilisateurnewentitys;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-
-    private static final long serialVersionUID = 1L;
-    
-    
-
-    
+    public BateauEntity() {
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -91,5 +78,5 @@ public class BateauEntity implements Serializable {
     public String toString() {
         return "entity.BateauEntity[ id=" + id + " ]";
     }
-    
+
 }
